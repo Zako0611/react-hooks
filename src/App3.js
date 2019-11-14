@@ -1,6 +1,6 @@
 // import React, { Component } from 'react';
 
-// class App extends Component {
+// class App3 extends Component {
 //     constructor(props) {
 //         super(props);
 //         this.state = { 
@@ -14,15 +14,26 @@
 //         </div> );
 //     }
 //     clickbtn(){
-
 //         let tmp=this.state.count+1
 //         this.setState({count:tmp})
 //     }
+//     componentDidMount(){
+//         console.log(`ComponentDidMount=>You clicked ${this.state.count} times`)
+//     }
+//     componentDidUpdate(){
+//         console.log(`componentDidUpdate=>You clicked ${this.state.count} times`)
+//     }
 // }
 
-import React, { useState } from 'react';
-function App(){
+import React, { useState , useEffect } from 'react';
+function App3(){
     const [ count , setCount ] = useState(0);
+    //---关键代码---------start-------
+    useEffect(()=>{
+        console.log(`useEffect=>You clicked ${count} times`)
+    })
+    //---关键代码---------end-------
+
     return (
         <div>
             <p>You clicked {count} times</p>
@@ -31,5 +42,4 @@ function App(){
     )
 }
 
-
-export default App;
+export default App3
